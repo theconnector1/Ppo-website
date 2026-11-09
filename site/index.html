@@ -47,6 +47,8 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
 .brand img{height:24px;width:auto}
 .brand span{font-family:var(--mark);font-size:12px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+@media(max-width:480px){.brand{gap:10px}.brand img{height:20px}.brand span{font-size:11px;letter-spacing:.14em}}
+@media(max-width:359px){.brand img{display:none}}
 @media(min-width:900px){.brand img{height:28px}.brand span{font-size:13px;letter-spacing:.24em}}
 .site-header .text-link{display:none}
 @media(min-width:760px){.site-header .text-link{display:inline}}
@@ -132,6 +134,17 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 @media(max-width:899px){.enquire .contact{width:100%}.enquire .contact .btn{width:100%}}
 .site-footer{background:var(--night);border-top:1px solid #3A3833}
 .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:26px;font-size:13px;color:var(--night-label)}
+/* One shared two-column grid on desktop so every right-hand column starts on the same line */
+.terms{row-gap:28px}
+.doc .row>span:first-child{display:flex;gap:10px}
+.doc .row .date{flex:0 0 auto;margin-right:0}
+@media(min-width:900px){
+  .statement,.steps,.twin,.founder,.examples .lead-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:96px;align-items:start}
+  .founder{align-items:end}
+  .examples .lead-in{align-items:end}
+  .statement .big,.statement .small,.steps .intro,.steps ol,.founder blockquote,.founder .who,.exchange{max-width:none}
+  .exchange{max-width:520px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 <style>
@@ -261,7 +274,7 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
   </section>
 
   <section class="section">
-    <div class="wrap twin">
+    <div class="wrap twin terms">
       <div>
         <h2>The terms we keep.</h2>
       </div>
