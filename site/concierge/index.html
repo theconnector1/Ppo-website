@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Concierge · The Private Property Office</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A trusted pair of hands for your home. Looked after while you are away, ready when you return, and one call for anything in and around the property.">
+<link rel="icon" href="../assets/icon.png">
+<link rel="apple-touch-icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Tenor+Sans&family=Hanken+Grotesk:wght@300;400;500&display=swap">
+<style>
+/* Layout: an asymmetric editorial page. Few sections, long measure on the left, quiet margins. Single light look by choice. */
+:root{
+  --ivory:#F2EDE3; --paper:#F8F5EE; --white:#FFFFFF;
+  --ink:#22211E; --ink-2:#3E3B35; --muted:#5E5A52;
+  --line:#D6CFC1; --line-soft:#E8E2D6; --night:#201F1D; --night-text:#CFC8BB; --night-label:#B5AC9C;
+  --display:"Marcellus",Georgia,serif;
+  --mark:"Tenor Sans","Gill Sans","Gill Sans MT",sans-serif;
+  --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ivory)}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+p{margin:0}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+@media(min-width:900px){.wrap{padding-left:max(56px,env(safe-area-inset-left,0px));padding-right:max(56px,env(safe-area-inset-right,0px))}}
+
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
+h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:15px 28px;background:var(--ink);color:var(--ivory);text-decoration:none;font-size:15px;letter-spacing:.02em;transition:background .2s}
+.btn:hover{background:#3A3833}
+.btn-light{background:var(--ivory);color:var(--night)}
+.btn-light:hover{background:var(--white)}
+.text-link{font-size:15px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
+.text-link:hover{border-color:var(--ink)}
+
+/* Header */
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:20px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{height:24px;width:auto}
+.brand span{font-family:var(--mark);font-size:12px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+@media(min-width:900px){.brand img{height:28px}.brand span{font-size:13px;letter-spacing:.24em}}
+.site-header .text-link{display:none}
+@media(min-width:760px){.site-header .text-link{display:inline}}
+
+/* Hero */
+.hero{display:flex;flex-wrap:wrap;border-top:1px solid var(--line)}
+.hero-copy{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;gap:32px;padding:56px max(24px,env(safe-area-inset-left,0px)) 48px}
+.hero h1{font-size:clamp(40px,5vw,72px);line-height:1.04;letter-spacing:-.01em;max-width:11em}
+.hero .intro{font-size:clamp(17px,1.4vw,19px);font-weight:300;color:var(--ink-2);max-width:30em}
+.hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+.hero-mark{flex:1 1 440px;min-width:0;background:var(--night);display:flex;align-items:center;justify-content:center;padding:56px 32px}
+.hero-mark img{width:100%;max-width:520px;height:auto}
+@media(max-width:899px){.hero .actions .btn{width:100%}}
+@media(min-width:900px){
+  .hero-copy{padding:120px 72px 72px max(56px,calc((100vw - 1280px)/2 + 56px))}
+  .hero-mark{min-height:640px}
+}
+
+/* Statement section: a long left measure, quiet right column */
+.section{border-top:1px solid var(--line)}
+.section .wrap{padding-block:clamp(64px,9vw,128px)}
+.paper{background:var(--paper)}
+.statement{display:flex;flex-wrap:wrap;gap:40px 96px;align-items:flex-start}
+.statement .big{flex:1.4 1 520px;min-width:0;font-family:var(--display);font-size:clamp(26px,2.7vw,36px);line-height:1.3;text-wrap:pretty}
+.statement .small{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:22px;padding-top:8px}
+.statement .small p{color:var(--ink-2);font-size:16px}
+.statement .small strong{font-weight:500;color:var(--ink)}
+
+/* How it works: a real sequence, so it is numbered */
+.steps{display:flex;flex-wrap:wrap;gap:40px 96px}
+.steps .intro{flex:1 1 300px;min-width:0;max-width:400px;display:flex;flex-direction:column;gap:18px}
+.steps ol{flex:2 1 520px;min-width:0;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:4px 16px;padding-block:22px;border-top:1px solid var(--line);counter-increment:s}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);grid-row:span 2;font-family:var(--display);font-size:28px;line-height:1;color:var(--muted)}
+.steps h3{font-size:21px}
+.steps li p{color:var(--ink-2);font-size:16px}
+
+/* Examples */
+.examples .lead-in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 64px;margin-bottom:40px}
+.examples .lead-in p{max-width:28em;color:var(--ink-2);font-size:16px}
+.docs{display:flex;flex-wrap:wrap;gap:24px}
+.doc{flex:1 1 380px;min-width:0;margin:0;background:var(--white);border:1px solid var(--line);padding:clamp(20px,2.4vw,32px) clamp(18px,2.6vw,34px) 22px}
+.doc .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:12px;border-bottom:1px solid var(--ink)}
+.doc .title{font-family:var(--display);font-size:clamp(17px,1.5vw,20px)}
+.doc .tag{font-size:12px;color:var(--muted);font-style:italic}
+.doc dl{margin:0}
+.doc dt{font-size:13px;color:var(--muted);padding-top:14px}
+.doc dd{margin:2px 0 0;padding-bottom:14px;border-bottom:1px solid var(--line-soft);font-size:15px;line-height:1.6;color:var(--ink-2)}
+.doc dd:last-child{border-bottom:0}
+.doc .row{display:flex;justify-content:space-between;gap:16px;padding-block:12px;border-bottom:1px solid var(--line-soft);font-size:15px;font-variant-numeric:tabular-nums}
+.doc .row .date{color:var(--muted);margin-right:10px}
+.doc .total{display:flex;justify-content:space-between;gap:16px;padding-top:14px;font-size:15px;font-variant-numeric:tabular-nums}
+.doc .total strong{font-weight:500}
+
+/* Occasions and terms: two plain columns of prose */
+.twin{display:flex;flex-wrap:wrap;gap:56px 96px}
+.twin>div{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.twin ul{list-style:none;margin:0;padding:0}
+.twin li{padding-block:14px;border-top:1px solid var(--line);font-size:16px;color:var(--ink-2)}
+.twin li strong{font-weight:500;color:var(--ink)}
+
+/* Two services */
+.ways{display:flex;flex-wrap:wrap;gap:0 56px;border-top:1px solid var(--ink)}
+.ways>div{flex:1 1 380px;min-width:0;padding-block:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.ways h3{font-size:clamp(26px,2.4vw,32px)}
+.ways p{color:var(--ink-2);font-size:16px;max-width:32em}
+@media(max-width:899px){.ways>div{border-bottom:1px solid var(--line)}}
+
+/* Founder */
+.founder{display:flex;flex-wrap:wrap;gap:24px 96px;align-items:flex-end}
+.founder blockquote{flex:2 1 520px;min-width:0;margin:0;font-family:var(--display);font-size:clamp(24px,2.5vw,34px);line-height:1.32;text-wrap:balance}
+.founder .who{flex:1 1 240px;min-width:0;font-size:15px;color:var(--muted)}
+.founder .who strong{display:block;font-weight:500;color:var(--ink);font-size:16px}
+
+/* Enquire */
+.enquire{background:var(--night);color:var(--ivory)}
+.enquire .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:36px 64px;padding-block:clamp(72px,9vw,128px)}
+.enquire h2{color:var(--ivory);max-width:14em}
+.enquire p{color:var(--night-text);margin-top:16px}
+.enquire .contact{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.enquire .addr{font-size:15px;color:var(--night-text);user-select:all;word-break:break-all}
+@media(max-width:899px){.enquire .contact{width:100%}.enquire .contact .btn{width:100%}}
+.site-footer{background:var(--night);border-top:1px solid #3A3833}
+.site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:26px;font-size:13px;color:var(--night-label)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+<style>
+.exchange{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px;max-width:560px}
+.msg{padding:16px 20px;font-size:16px;line-height:1.55;max-width:88%}
+.msg.owner{align-self:flex-start;background:var(--white);border:1px solid var(--line)}
+.msg.office{align-self:flex-end;background:var(--ink);color:var(--ivory)}
+.msg small{display:block;font-size:12px;margin-bottom:4px;opacity:.75}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="The Private Property Office, home">
+      <img src="../assets/mark.png" alt="" width="79" height="30">
+      <span>The Private Property Office</span>
+    </a>
+    <nav style="display:flex;gap:28px;align-items:center">
+      <a class="text-link" href="../#services">The Private Office</a>
+      <a class="text-link" href="#enquire">Arrange a private introduction</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>The Concierge. A trusted pair of hands for your home.</h1>
+      <p class="intro">For owners who want the house looked after and every small matter dealt with, without handing over the running of it. One call, and it is done.</p>
+      <div class="actions">
+        <a class="btn" href="#enquire">Arrange a private introduction</a>
+        <span class="muted" style="font-size:15px">In confidence, without obligation.</span>
+      </div>
+    </div>
+    <div class="hero-mark">
+      <img src="../assets/emblem.jpg" alt="The Private Property Office" width="954" height="680">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap statement">
+      <p class="big">The air conditioning fails, you call us. You leave for six months, we look after the house. You arrive, and it is ready.</p>
+      <div class="exchange" aria-label="Example exchange">
+        <p class="msg owner"><small>Example · Owner, Tuesday 18:40</small>The gate isn't closing properly. Can you sort it?</p>
+        <p class="msg office"><small>The Concierge, 18:52</small>Of course. An engineer is booked for ten tomorrow. I will meet him there and send you photographs once it is done.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section paper">
+    <div class="wrap twin">
+      <div>
+        <h2>What the Concierge looks after.</h2>
+        <ul>
+          <li><strong>While you are away.</strong> The house checked, secured and looked after, and attended after severe weather.</li>
+          <li><strong>Before you arrive.</strong> Aired, at temperature and ready, with anything outstanding resolved.</li>
+          <li><strong>Keys and access.</strong> Held securely, with every visitor to the house arranged and attended.</li>
+          <li><strong>Staff and suppliers.</strong> Housekeepers, gardeners, pool and system specialists coordinated.</li>
+          <li><strong>Repairs and small works.</strong> Arranged, overseen and checked, by people we trust.</li>
+          <li><strong>Deliveries and appointments.</strong> Received and handled at the house on your behalf.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>How it works.</h2>
+        <ul>
+          <li><strong>A monthly retainer.</strong> Covers our attendance at the house, being on call and your statement.</li>
+          <li><strong>Each task agreed.</strong> Anything beyond the retainer is agreed with you first and shown on your statement.</li>
+          <li><strong>Costs at cost.</strong> Supplier costs are passed on with receipts, never marked up.</li>
+          <li><strong>One named contact.</strong> Someone who knows the house and answers when you call.</li>
+          <li><strong>Discretion.</strong> Confidentiality agreed as standard.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap statement">
+      <p class="big">When you would like the house run and advised on as a whole, the Private Office takes on everything the Concierge does, and more.</p>
+      <div class="small">
+        <p>A private record of the property and its systems, honest advice before you spend, and every project delivered or overseen on your side, for one retainer set for your home.</p>
+        <p><a class="text-link" href="../#services">About the Private Office</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="enquire" id="enquire">
+    <div class="wrap">
+      <div>
+        <h2>A conversation about your home, in confidence.</h2>
+        <p>We will suggest the Concierge or the Private Office, whichever suits the house.</p>
+      </div>
+      <div class="contact">
+        <a class="btn btn-light" href="mailto:enquiries@theprivatepropertyoffice.com?subject=Private%20introduction%20%E2%80%94%20Concierge">Arrange a private introduction</a>
+        <span class="addr">enquiries@theprivatepropertyoffice.com</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>The Private Property Office</span>
+    <span>In confidence</span>
+  </div>
+</footer>
+
+</body>
+</html>
