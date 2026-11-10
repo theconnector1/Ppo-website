@@ -70,7 +70,7 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 
 /* Statement section: a long left measure, quiet right column */
 .section{border-top:1px solid var(--line)}
-.section .wrap{padding-block:clamp(64px,9vw,128px)}
+.section .wrap{padding-block:clamp(96px,12vw,176px)}
 .paper{background:var(--paper)}
 .statement{display:flex;flex-wrap:wrap;gap:40px 96px;align-items:flex-start}
 .statement .big{flex:1.4 1 520px;min-width:0;font-family:var(--display);font-size:clamp(26px,2.7vw,36px);line-height:1.3;text-wrap:pretty}
@@ -127,7 +127,7 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 
 /* Enquire */
 .enquire{background:var(--night);color:var(--ink)}
-.enquire .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:36px 64px;padding-block:clamp(72px,9vw,128px)}
+.enquire .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:36px 64px;padding-block:clamp(96px,12vw,176px)}
 .enquire h2{color:var(--ink);max-width:14em}
 .enquire p{color:var(--night-text);margin-top:16px}
 .enquire .contact{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
@@ -137,6 +137,10 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:26px;font-size:13px;color:var(--night-label)}
 /* One shared two-column grid on desktop so every right-hand column starts on the same line */
 .terms{row-gap:28px}
+.simple li{padding-block:20px;font-size:17px;color:var(--ink)}
+.simple li:last-child{border-bottom:1px solid var(--line)}
+.docs.single .doc{flex:0 1 560px}
+.hero .intro{font-size:clamp(18px,1.6vw,21px)!important;max-width:22em!important}
 .doc .row>span:first-child{display:flex;gap:10px}
 .doc .row .date{flex:0 0 auto;margin-right:0}
 @media(min-width:900px){
@@ -176,7 +180,7 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
   <section class="hero">
     <div class="hero-copy">
       <h1>Your home. Our responsibility.</h1>
-      <p class="intro">A trusted pair of hands for the house. Looked after while you are away, ready when you return, and one call for anything in and around the property. We arrange it, oversee it and send you one clear statement.</p>
+      <p class="intro">Looked after while you are away. Ready when you return. One call for anything else.</p>
       <div class="actions">
         <a class="btn" href="#enquire">Arrange a private introduction</a>
         <span class="muted" style="font-size:15px">In confidence, without obligation.</span>
@@ -189,10 +193,10 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 
   <section class="section">
     <div class="wrap statement">
-      <p class="big">The air conditioning fails, you call us. You leave for six months, we look after the house. You arrive, and it is ready. One call, and the rest is handled.</p>
+      <p class="big">The air conditioning fails, you call us. The rest is handled.</p>
       <div class="exchange" aria-label="Example exchange">
-        <p class="msg owner"><small>Example · Owner, Tuesday 18:40</small>The gate isn't closing properly. Can you sort it?</p>
-        <p class="msg office"><small>The Concierge, 18:52</small>Of course. An engineer is booked for ten tomorrow. I will meet him there and send you photographs once it is done.</p>
+        <p class="msg owner"><small>Example · Owner, 18:40</small>The gate isn't closing. Can you sort it?</p>
+        <p class="msg office"><small>The Concierge, 18:52</small>Of course. An engineer is booked for ten tomorrow. I will send photographs once it is done.</p>
       </div>
     </div>
   </section>
@@ -201,23 +205,21 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
     <div class="wrap twin">
       <div>
         <h2>What we look after.</h2>
-        <ul>
-          <li><strong>While you are away.</strong> The house checked, secured and looked after, and attended after severe weather.</li>
-          <li><strong>Before you arrive.</strong> Aired, at temperature and ready, with anything outstanding resolved.</li>
-          <li><strong>Keys and access.</strong> Held securely, with every visitor to the house arranged and attended.</li>
-          <li><strong>Staff and suppliers.</strong> Housekeepers, gardeners, pool and system specialists coordinated.</li>
-          <li><strong>Repairs and small works.</strong> Arranged, overseen and checked, by people we trust.</li>
-          <li><strong>Deliveries and appointments.</strong> Received and handled at the house on your behalf.</li>
+        <ul class="simple">
+          <li>The house while you are away</li>
+          <li>Readiness before you arrive</li>
+          <li>Keys, access and visitors</li>
+          <li>Staff and trusted suppliers</li>
+          <li>Repairs and small works</li>
         </ul>
       </div>
       <div>
         <h2>How it works.</h2>
-        <ul>
-          <li><strong>A monthly retainer.</strong> Covers our attendance at the house, being on call and your statement.</li>
-          <li><strong>Each task agreed.</strong> Anything beyond the retainer is agreed with you first and shown on your statement.</li>
-          <li><strong>Your limits, agreed once.</strong> Below an agreed amount, we simply act. Above it, one message and a yes from you.</li>
-          <li><strong>One named contact.</strong> Someone who knows the house and answers when you call.</li>
-          <li><strong>We settle the invoices.</strong> Supplier costs passed on at cost, with receipts, never marked up.</li>
+        <ul class="simple">
+          <li>A monthly retainer</li>
+          <li>Each task agreed with you first</li>
+          <li>One named contact</li>
+          <li>One statement, every cost at cost</li>
         </ul>
       </div>
     </div>
@@ -226,18 +228,10 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
   <section class="section examples">
     <div class="wrap">
       <div class="lead-in">
-        <h2>What you receive.</h2>
-        <p>A short note when something matters, and one statement of every cost. Both examples below are illustrative.</p>
+        <h2>Every cost, on one page.</h2>
+        <p>An example of your monthly statement.</p>
       </div>
-      <div class="docs">
-        <figure class="doc" aria-label="Example arrival note">
-          <div class="top"><span class="title">Before your arrival, Friday</span><span class="tag">Example</span></div>
-          <dl>
-            <dt>Ready</dt><dd>Heating on since Tuesday, the house aired, and the pool brought up to temperature. The gardener has been.</dd>
-            <dt>Noticed</dt><dd>The outside tap by the terrace is dripping.</dd>
-            <dt>Next</dt><dd>Plumber booked for Monday, within your agreed limit. Photographs to follow when complete.</dd>
-          </dl>
-        </figure>
+      <div class="docs single">
         <figure class="doc" aria-label="Example statement">
           <div class="top"><span class="title">Statement, March</span><span class="tag">Example</span></div>
           <div class="row"><span><span class="date">6 Mar</span>Gate motor repaired</span><span>£340.00</span></div>
@@ -249,44 +243,34 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
     </div>
   </section>
 
-  <section class="section paper office-block" id="office">
-    <div class="wrap">
-      <div class="statement">
-        <p class="big">When you would like the house run and advised on as a whole, the Private Office takes on everything above, and more.</p>
-        <div class="small">
-          <p><strong>Property advice.</strong> What needs doing now, what can wait, and whether a contractor's recommendation is sound, before you spend.</p>
-          <p><strong>Projects on your side.</strong> Larger works briefed, quotes checked before you commit, and the work overseen to completion.</p>
-          <p><strong>A new home.</strong> Represented at handover, with every defect followed up until it is put right.</p>
-        </div>
+  <section class="section paper" id="office">
+    <div class="wrap twin">
+      <div>
+        <h2>The Private Office.</h2>
+        <p class="muted" style="font-size:17px;max-width:24em">For when you would like the house run and advised on as a whole.</p>
       </div>
-      <div class="steps">
-        <div class="intro">
-          <h2>How the Private Office begins.</h2>
-          <p class="muted" style="font-size:16px">For principal homes, second homes and estates. Most clients begin with the Concierge.</p>
-        </div>
-        <ol>
-          <li><h3>The property record</h3><p>We walk the house and grounds and build its record: the property, its systems, warranties, service history and the people who work on it. It belongs to you.</p></li>
-          <li><h3>A plan for the house</h3><p>What it needs this year and beyond, in plain terms, with costs set out before anything is committed.</p></li>
-          <li><h3>Your property lead</h3><p>A named lead who knows the house, visiting as it needs rather than to a timetable, and in touch when something matters.</p></li>
-          <li><h3>Each year</h3><p>A full review of the house against its record, and a plan for the year ahead.</p></li>
-        </ol>
+      <div>
+        <ul class="simple">
+          <li>Honest advice before you spend</li>
+          <li>Projects overseen on your side</li>
+          <li>Handover of a new home, every defect followed up</li>
+          <li>A full record of the house, which belongs to you</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap twin terms">
+    <div class="wrap twin">
       <div>
         <h2>The terms we keep.</h2>
       </div>
       <div>
-        <ul>
-          <li><strong>Discretion.</strong> Your home, your guests and your affairs stay private. Confidentiality is agreed as standard.</li>
-          <li><strong>Trusted people only.</strong> Every supplier vetted, insured and known to us, with nobody at the house unannounced.</li>
-          <li><strong>No margin on the work.</strong> We are paid for our care of the house, never a share of what is spent on it.</li>
-          <li><strong>Independent advice.</strong> We do not sell the work we recommend, and declare any connection first.</li>
-          <li><strong>Your record is yours.</strong> Every document stays with you, whatever happens.</li>
-          <li><strong>Agreed in writing.</strong> The scope and your limits are set out before we begin.</li>
+        <ul class="simple">
+          <li>Discretion, agreed as standard</li>
+          <li>Trusted, vetted people only</li>
+          <li>No margin on the work we arrange</li>
+          <li>Everything agreed in writing</li>
         </ul>
       </div>
     </div>
@@ -294,8 +278,8 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 
   <section class="section paper">
     <div class="wrap founder">
-      <blockquote>“A fine home deserves someone who understands it as well as its owner does, and who will say plainly what it needs.”</blockquote>
-      <p class="who"><strong>Alex Green</strong>Founder. Nearly two decades working inside significant homes.</p>
+      <blockquote>“A fine home deserves someone who understands it, and who will say plainly what it needs.”</blockquote>
+      <p class="who"><strong>Alex Green</strong>Founder</p>
     </div>
   </section>
 
@@ -303,7 +287,6 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
     <div class="wrap">
       <div>
         <h2>A conversation about your home, in confidence.</h2>
-        <p>Most begin with the Concierge. We will suggest whatever suits the house.</p>
       </div>
       <div class="contact">
         <a class="btn btn-light" href="mailto:enquiries@theprivatepropertyoffice.com?subject=Private%20introduction">Arrange a private introduction</a>
