@@ -6,6 +6,7 @@
 <title>The Private Property Concierge</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="A trusted pair of hands for your home. Looked after while you are away, ready when you return, and one call for anything in and around the property.">
+<meta name="theme-color" content="#1D1B19">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +15,13 @@
 <style>
 /* Layout: an asymmetric editorial page. Few sections, long measure on the left, quiet margins. Single light look by choice. */
 :root{
-  --ivory:#F2EDE3; --paper:#F8F5EE; --white:#FFFFFF;
-  --ink:#22211E; --ink-2:#3E3B35; --muted:#5E5A52;
-  --line:#D6CFC1; --line-soft:#E8E2D6; --night:#201F1D; --night-text:#CFC8BB; --night-label:#B5AC9C;
+  --ivory:#1D1B19; --paper:#23211E; --white:#2A2724;
+  --ink:#EEE9DD; --ink-2:#CDC6B8; --muted:#968E80;
+  --line:#3A3631; --line-soft:#322F2B; --night:#141311; --night-text:#CDC6B8; --night-label:#8C8476;
   --display:"Marcellus",Georgia,serif;
   --mark:"Tenor Sans","Gill Sans","Gill Sans MT",sans-serif;
   --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
-  color-scheme:light;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--ivory)}
@@ -36,9 +37,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
 h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 .muted{color:var(--muted)}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:15px 28px;background:var(--ink);color:var(--ivory);text-decoration:none;font-size:15px;letter-spacing:.02em;transition:background .2s}
-.btn:hover{background:#3A3833}
-.btn-light{background:var(--ivory);color:var(--night)}
-.btn-light:hover{background:var(--white)}
+.btn:hover{background:#FFFFFF}
+.btn-light{background:var(--ink);color:var(--night)}
+.btn-light:hover{background:#FFFFFF}
 .text-link{font-size:15px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
 .text-link:hover{border-color:var(--ink)}
 
@@ -59,7 +60,7 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 .hero h1{font-size:clamp(40px,5vw,72px);line-height:1.04;letter-spacing:-.01em;max-width:11em}
 .hero .intro{font-size:clamp(17px,1.4vw,19px);font-weight:300;color:var(--ink-2);max-width:30em}
 .hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
-.hero-mark{flex:1 1 440px;min-width:0;background:#1D1B19;display:flex;align-items:center;justify-content:center;padding:56px 32px}
+.hero-mark{flex:1 1 440px;min-width:0;background:var(--ivory);display:flex;align-items:center;justify-content:center;padding:56px 32px}
 .hero-mark img{width:100%;max-width:520px;height:auto}
 @media(max-width:899px){.hero .actions .btn{width:100%}}
 @media(min-width:900px){
@@ -125,14 +126,14 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 .founder .who strong{display:block;font-weight:500;color:var(--ink);font-size:16px}
 
 /* Enquire */
-.enquire{background:var(--night);color:var(--ivory)}
+.enquire{background:var(--night);color:var(--ink)}
 .enquire .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:36px 64px;padding-block:clamp(72px,9vw,128px)}
-.enquire h2{color:var(--ivory);max-width:14em}
+.enquire h2{color:var(--ink);max-width:14em}
 .enquire p{color:var(--night-text);margin-top:16px}
 .enquire .contact{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .enquire .addr{font-size:15px;color:var(--night-text);user-select:all;word-break:break-all}
 @media(max-width:899px){.enquire .contact{width:100%}.enquire .contact .btn{width:100%}}
-.site-footer{background:var(--night);border-top:1px solid #3A3833}
+.site-footer{background:var(--night);border-top:1px solid #2A2724}
 .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:26px;font-size:13px;color:var(--night-label)}
 /* One shared two-column grid on desktop so every right-hand column starts on the same line */
 .terms{row-gap:28px}
@@ -161,7 +162,7 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.18}
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="The Private Property Concierge, home">
-      <img src="assets/mark.png" alt="" width="79" height="30">
+      <img src="assets/mark-light.png" alt="" width="79" height="30">
       <span>The Private Property Concierge</span>
     </a>
     <nav style="display:flex;gap:28px;align-items:center">
