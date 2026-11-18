@@ -1,325 +1,238 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The Private Property Concierge</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="A trusted pair of hands for your home. Looked after while you are away, ready when you return, and one call for anything in and around the property.">
-<meta name="theme-color" content="#1D1B19">
+<title>The Private Property Office</title>
+<meta name="description" content="Private Residence Management for significant homes within an hour of Bath. One trusted office for the care, advice and running of your residence.">
+<meta name="theme-color" content="#F4F0E8">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Tenor+Sans&family=Hanken+Grotesk:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500&display=swap">
 <style>
-/* Layout: an asymmetric editorial page. Few sections, long measure on the left, quiet margins. Single light look by choice. */
 :root{
-  --ivory:#1D1B19; --paper:#23211E; --white:#2A2724;
-  --ink:#EEE9DD; --ink-2:#CDC6B8; --muted:#968E80;
-  --line:#3A3631; --line-soft:#322F2B; --night:#141311; --night-text:#CDC6B8; --night-label:#8C8476;
-  --display:"Marcellus",Georgia,serif;
-  --mark:"Tenor Sans","Gill Sans","Gill Sans MT",sans-serif;
-  --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
-  color-scheme:dark;
+  --ivory:#F4F0E8;      /* page */
+  --stone:#E9E3D7;      /* alternate band */
+  --ink:#24221F;        /* charcoal text */
+  --ink-2:#4E4A44;      /* body text */
+  --muted:#8A8378;      /* labels */
+  --line:#D8D0C2;
+  --night:#1E1C1A;      /* enquiry band */
+  --night-text:#BDB5A7;
+  --serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:max(24px,env(safe-area-inset-left,0px));
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--ivory)}
-body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+html{background:var(--ivory);scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 p{margin:0}
-.wrap{max-width:1280px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-@media(min-width:900px){.wrap{padding-left:max(56px,env(safe-area-inset-left,0px));padding-right:max(56px,env(safe-area-inset-right,0px))}}
+h1,h2,h3{font-family:var(--serif);font-weight:300;margin:0;letter-spacing:-.005em;text-wrap:balance}
+.wrap{max-width:1320px;margin:0 auto;padding-left:var(--pad);padding-right:max(24px,env(safe-area-inset-right,0px))}
+@media(min-width:900px){.wrap{padding-left:64px;padding-right:64px}}
 
-h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
-h2{font-size:clamp(24px,2.4vw,28px);line-height:1.2}
-.muted{color:var(--muted)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:15px 28px;background:var(--ink);color:var(--ivory);text-decoration:none;font-size:15px;letter-spacing:.02em;transition:background .2s}
-.btn:hover{background:#FFFFFF}
-.btn-light{background:var(--ink);color:var(--night)}
-.btn-light:hover{background:#FFFFFF}
-.text-link{font-size:15px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
-.text-link:hover{border-color:var(--ink)}
+.label{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.cta{display:inline-flex;align-items:center;gap:14px;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding-bottom:6px;border-bottom:1px solid var(--ink);transition:opacity .2s}
+.cta:hover{opacity:.6}
+.cta.light{color:var(--ivory);border-color:var(--ivory)}
 
 /* Header */
-.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:20px}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-.brand img{height:24px;width:auto}
-.brand span{font-family:var(--mark);font-size:12px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
-@media(max-width:480px){.brand{gap:10px}.brand img{height:20px}.brand span{font-size:11px;letter-spacing:.14em}}
-@media(max-width:359px){.brand img{display:none}}
-@media(min-width:900px){.brand img{height:28px}.brand span{font-size:13px;letter-spacing:.24em}}
-.site-header .text-link{display:none}
-@media(min-width:760px){.site-header .text-link{display:inline}}
+header{position:relative;z-index:2}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:max(28px,env(safe-area-inset-top,0px));padding-bottom:28px}
+.wordmark{text-decoration:none;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;white-space:nowrap}
+header .cta{display:none}
+@media(min-width:760px){header .cta{display:inline-flex}.wordmark{font-size:12px;letter-spacing:.36em}}
 
 /* Hero */
-.hero{display:flex;flex-wrap:wrap;border-top:1px solid var(--line)}
-.hero-copy{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;gap:32px;padding:56px max(24px,env(safe-area-inset-left,0px)) 48px}
-.hero h1{font-size:clamp(40px,5vw,51px);line-height:1.05;letter-spacing:-.01em;max-width:11em}
-.hero .intro{font-size:clamp(17px,1.4vw,19px);font-weight:300;color:var(--ink-2);max-width:30em}
-.hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
-.hero-mark{flex:1 1 440px;min-width:0;background:var(--ivory);display:flex;align-items:center;justify-content:center;padding:56px 32px}
-.hero-mark img{width:100%;max-width:520px;height:auto}
-@media(max-width:899px){.hero .actions .btn{width:100%}}
-@media(min-width:900px){
-  .hero-copy{padding:120px 72px 72px max(56px,calc((100vw - 1280px)/2 + 56px))}
-  .hero-mark{min-height:640px}
-}
+.hero .wrap{padding-top:clamp(48px,9vw,128px);padding-bottom:clamp(48px,7vw,96px)}
+.hero h1{font-size:clamp(46px,8.4vw,112px);line-height:.98;max-width:9.5em}
+.hero h1 em{font-style:italic}
+.hero .under{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px 64px;margin-top:clamp(36px,5vw,64px)}
+.hero .under p{max-width:30em;font-size:17px;color:var(--ink-2)}
 
-/* Statement section: a long left measure, quiet right column */
-.section{border-top:1px solid var(--line)}
-.section .wrap{padding-block:clamp(96px,12vw,176px)}
-.paper{background:var(--paper)}
-.statement{display:flex;flex-wrap:wrap;gap:40px 96px;align-items:flex-start}
-.statement .big{flex:1.4 1 520px;min-width:0;font-family:var(--display);font-size:clamp(26px,2.7vw,36px);line-height:1.3;text-wrap:pretty}
-.statement .small{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:22px;padding-top:8px}
-.statement .small p{color:var(--ink-2);font-size:16px}
-.statement .small strong{font-weight:500;color:var(--ink)}
+/* Image slots — temporary until photography is supplied */
+.img{position:relative;background-color:#D2C9B9;background-size:cover;background-position:center;overflow:hidden}
+.img::after{content:attr(data-brief);position:absolute;left:16px;bottom:14px;right:16px;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(36,34,31,.55)}
+.img.hero-img{aspect-ratio:16/9;width:100%}
+@media(max-width:699px){.img.hero-img{aspect-ratio:4/5}}
 
-/* How it works: a real sequence, so it is numbered */
-.steps{display:flex;flex-wrap:wrap;gap:40px 96px}
-.steps .intro{flex:1 1 300px;min-width:0;max-width:400px;display:flex;flex-direction:column;gap:18px}
-.steps ol{flex:2 1 520px;min-width:0;list-style:none;margin:0;padding:0;counter-reset:s}
-.steps li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:4px 16px;padding-block:22px;border-top:1px solid var(--line);counter-increment:s}
-.steps li:last-child{border-bottom:1px solid var(--line)}
-.steps li::before{content:counter(s);grid-row:span 2;font-family:var(--display);font-size:28px;line-height:1;color:var(--muted)}
-.steps h3{font-size:21px}
-.steps li p{color:var(--ink-2);font-size:16px}
+/* Sections */
+section{position:relative}
+.band{padding-block:clamp(88px,13vw,184px)}
+.stone{background:var(--stone)}
+.rule{border-top:1px solid var(--line)}
 
-/* Examples */
-.examples .lead-in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 64px;margin-bottom:40px}
-.examples .lead-in p{max-width:28em;color:var(--ink-2);font-size:16px}
-.docs{display:flex;flex-wrap:wrap;gap:24px}
-.doc{flex:1 1 380px;min-width:0;margin:0;background:var(--white);border:1px solid var(--line);padding:clamp(20px,2.4vw,32px) clamp(18px,2.6vw,34px) 22px}
-.doc .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:12px;border-bottom:1px solid var(--ink)}
-.doc .title{font-family:var(--display);font-size:clamp(17px,1.5vw,20px)}
-.doc .tag{font-size:12px;color:var(--muted);font-style:italic}
-.doc dl{margin:0}
-.doc dt{font-size:13px;color:var(--muted);padding-top:14px}
-.doc dd{margin:2px 0 0;padding-bottom:14px;border-bottom:1px solid var(--line-soft);font-size:15px;line-height:1.6;color:var(--ink-2)}
-.doc dd:last-child{border-bottom:0}
-.doc .row{display:flex;justify-content:space-between;gap:16px;padding-block:12px;border-bottom:1px solid var(--line-soft);font-size:15px;font-variant-numeric:tabular-nums}
-.doc .row .date{color:var(--muted);margin-right:10px}
-.doc .total{display:flex;justify-content:space-between;gap:16px;padding-top:14px;font-size:15px;font-variant-numeric:tabular-nums}
-.doc .total strong{font-weight:500}
+.intro-grid{display:grid;gap:40px}
+@media(min-width:900px){.intro-grid{grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:64px}}
+.statement{font-family:var(--serif);font-size:clamp(30px,3.6vw,50px);line-height:1.18;max-width:20em}
+.statement-sub{margin-top:36px;max-width:34em;font-size:17px;color:var(--ink-2)}
 
-/* Occasions and terms: two plain columns of prose */
-.twin{display:flex;flex-wrap:wrap;gap:56px 96px}
-.twin>div{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px}
-.twin ul{list-style:none;margin:0;padding:0}
-.twin li{padding-block:14px;border-top:1px solid var(--line);font-size:16px;color:var(--ink-2)}
-.twin li strong{font-weight:500;color:var(--ink)}
+/* Service */
+.service-head{display:grid;gap:24px;margin-bottom:clamp(56px,7vw,96px)}
+@media(min-width:900px){.service-head{grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:64px;align-items:end}}
+.service-head h2{font-size:clamp(36px,4.6vw,64px);line-height:1.04}
+.pillars{display:grid;gap:0;border-top:1px solid var(--ink)}
+@media(min-width:900px){.pillars{grid-template-columns:repeat(3,minmax(0,1fr));gap:56px}}
+.pillar{padding-block:28px 36px;border-bottom:1px solid var(--line)}
+@media(min-width:900px){.pillar{border-bottom:0}}
+.pillar .num{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--muted)}
+.pillar h3{font-size:clamp(26px,2.4vw,32px);line-height:1.15;margin:14px 0 16px}
+.pillar p{color:var(--ink-2);font-size:16px;max-width:26em}
 
-/* Two services */
-.ways{display:flex;flex-wrap:wrap;gap:0 56px;border-top:1px solid var(--ink)}
-.ways>div{flex:1 1 380px;min-width:0;padding-block:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.ways h3{font-size:clamp(26px,2.4vw,32px)}
-.ways p{color:var(--ink-2);font-size:16px;max-width:32em}
-@media(max-width:899px){.ways>div{border-bottom:1px solid var(--line)}}
+/* Image pair */
+.pair{display:grid;gap:20px}
+@media(min-width:760px){.pair{grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:28px;align-items:end}}
+.pair .img:first-child{aspect-ratio:4/5}
+.pair .img:last-child{aspect-ratio:1/1}
+
+/* For whom */
+.whom{display:grid;gap:48px}
+@media(min-width:900px){.whom{grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:64px}}
+.whom h2{font-size:clamp(34px,4vw,54px);line-height:1.08}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.list li{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding-block:26px;border-bottom:1px solid var(--line)}
+@media(min-width:700px){.list li{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px;align-items:baseline}}
+.list .t{font-family:var(--serif);font-size:clamp(23px,2vw,27px);line-height:1.25}
+.list .d{color:var(--ink-2);font-size:16px}
+.aside{margin-top:32px;font-size:15px;color:var(--muted);max-width:36em}
+
+/* Principles */
+.principles{display:grid;gap:0;border-top:1px solid var(--line)}
+@media(min-width:760px){.principles{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px}}
+@media(min-width:1100px){.principles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.principles div{padding-block:28px;border-bottom:1px solid var(--line)}
+.principles h3{font-size:24px;line-height:1.2;margin-bottom:10px}
+.principles p{font-size:15px;color:var(--ink-2)}
 
 /* Founder */
-.founder{display:flex;flex-wrap:wrap;gap:24px 96px;align-items:flex-end}
-.founder blockquote{flex:2 1 520px;min-width:0;margin:0;font-family:var(--display);font-size:clamp(24px,2.5vw,34px);line-height:1.32;text-wrap:balance}
-.founder .who{flex:1 1 240px;min-width:0;font-size:15px;color:var(--muted)}
-.founder .who strong{display:block;font-weight:500;color:var(--ink);font-size:16px}
+.founder{display:grid;gap:40px}
+@media(min-width:900px){.founder{grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:96px;align-items:end}}
+.founder blockquote{margin:0;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(30px,3.4vw,46px);line-height:1.2}
+.founder .who p{font-size:16px;color:var(--ink-2);max-width:26em}
+.founder .who .name{margin-top:24px;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
 
 /* Enquire */
-.enquire{background:var(--night);color:var(--ink)}
-.enquire .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:36px 64px;padding-block:clamp(96px,12vw,176px)}
-.enquire h2{color:var(--ink);max-width:14em}
-.enquire p{color:var(--night-text);margin-top:16px}
-.enquire .contact{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.enquire .addr{font-size:15px;color:var(--night-text);user-select:all;word-break:break-all}
-@media(max-width:899px){.enquire .contact{width:100%}.enquire .contact .btn{width:100%}}
-.site-footer{background:var(--night);border-top:1px solid #2A2724}
-.site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:26px;font-size:13px;color:var(--night-label)}
-/* One shared two-column grid on desktop so every right-hand column starts on the same line */
-.terms{row-gap:28px}
-.simple li{padding-block:20px;font-size:17px;color:var(--ink)}
-.simple li:last-child{border-bottom:1px solid var(--line)}
-.docs.single .doc{flex:0 1 560px}
-.hero .intro{font-size:18px!important;font-weight:400!important;line-height:1.6;max-width:22em!important}
-.doc .row>span:first-child{display:flex;gap:10px}
-.doc .row .date{flex:0 0 auto;margin-right:0}
-@media(min-width:900px){
-  .statement,.steps,.twin,.founder,.examples .lead-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:96px;align-items:start}
-  .founder{align-items:end}
-  .examples .lead-in{align-items:end}
-  .statement .big,.statement .small,.steps .intro,.steps ol,.founder blockquote,.founder .who,.exchange{max-width:none}
-  .exchange{max-width:520px}
-}
+.enquire{background:var(--night);color:var(--ivory)}
+.enquire .wrap{padding-block:clamp(96px,13vw,184px);display:grid;gap:48px}
+@media(min-width:900px){.enquire .wrap{grid-template-columns:minmax(0,3fr) minmax(0,2fr);align-items:end;gap:96px}}
+.enquire .emblem{display:block;width:clamp(150px,16vw,220px);height:auto;margin-bottom:clamp(40px,5vw,64px);opacity:.92}
+.enquire h2{font-size:clamp(38px,5vw,72px);line-height:1.02}
+.enquire .label{color:var(--night-text)}
+.enquire .contact{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.enquire .contact p{color:var(--night-text);font-size:15px;max-width:26em}
+.enquire .addr{font-size:14px;color:var(--night-text);word-break:break-all;user-select:all}
+
+footer{background:var(--night);border-top:1px solid #34312C}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px max(28px,env(safe-area-inset-bottom,0px));font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#7E776C}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-</style>
-<style>
-.exchange{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px;max-width:560px}
-.msg{padding:16px 20px;font-size:16px;line-height:1.55;max-width:88%}
-.msg.owner{align-self:flex-start;background:var(--white);border:1px solid var(--line)}
-.msg.office{align-self:flex-end;background:var(--ink);color:var(--ivory)}
-.msg small{display:block;font-size:12px;margin-bottom:4px;opacity:.75}
-.office-block .steps{margin-top:56px}
-</style>
-<style>
-/* Type scale: seven sizes only. Marcellus 51/28, Hanken 18/17/15/13, Tenor wordmark 13. */
-.statement .big,.founder blockquote{font-size:clamp(24px,2.4vw,28px);line-height:1.3}
-.msg,.statement .small p,.steps li p,.examples .lead-in p,.twin li,.ways p,.doc dd,.doc .row,.doc .total{font-size:17px}
-.msg small,.doc .tag,.doc dt,.founder .who,.enquire .addr{font-size:13px}
-.doc .tag{font-style:normal;text-transform:uppercase;letter-spacing:.12em}
-.doc .title{font-family:var(--body);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.12em}
-.founder .who{display:flex;flex-direction:column;gap:20px}
-.founder .who strong{font-size:17px}
-.founder .who .bio{font-size:17px;color:var(--ink-2);max-width:26em}
-.enquire .note{font-size:13px;color:var(--night-text);margin-top:0}
-.enquire .note a{color:var(--ink)}
-.faq{margin:0}
-.faq dt{font-size:17px;font-weight:500;color:var(--ink);padding-top:20px;border-top:1px solid var(--line)}
-.faq dd{margin:6px 0 0;padding-bottom:20px;font-size:17px;color:var(--ink-2)}
-.faq dd:last-child{border-bottom:1px solid var(--line)}
 </style>
 </head>
 <body>
 
-<header class="site-header">
+<header>
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="The Private Property Concierge, home">
-      <img src="assets/mark-light.png" alt="" width="79" height="30">
-      <span>The Private Property Concierge</span>
-    </a>
-    <nav style="display:flex;gap:28px;align-items:center">
-      <a class="text-link" href="#office">The Private Property Office</a>
-      <a class="text-link" href="#enquire">Arrange a private introduction</a>
-    </nav>
+    <a class="wordmark" href="#top">The Private Property Office</a>
+    <a class="cta" href="#enquire">Arrange a private consultation</a>
   </div>
 </header>
 
 <main id="top">
+
   <section class="hero">
-    <div class="hero-copy">
-      <h1>Your home. Our responsibility.</h1>
-      <p class="intro">Looked after while you are away. Ready when you return. One call for anything else.</p>
-      <div class="actions">
-        <a class="btn" href="#enquire">Arrange a private introduction</a>
-        <span class="muted" style="font-size:13px">In confidence, without obligation.</span>
-      </div>
-    </div>
-    <div class="hero-mark">
-      <img src="assets/emblem.jpg" alt="The Private Property Concierge" width="954" height="680">
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap statement">
-      <p class="big">The air conditioning fails, you call us. The rest is handled.</p>
-      <div class="exchange" aria-label="Example exchange">
-        <p class="msg owner"><small>Example · Owner, 18:40</small>The gate isn't closing. Can you sort it?</p>
-        <p class="msg office"><small>The Concierge, 18:52</small>Of course. An engineer is booked for ten tomorrow. I will send photographs once it is done.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section paper" id="concierge">
-    <div class="wrap twin">
-      <div>
-        <h2>What we look after.</h2>
-        <ul class="simple">
-          <li>The house while you are away</li>
-          <li>Readiness before you arrive</li>
-          <li>Keys, access and visitors</li>
-          <li>Staff and trusted suppliers</li>
-          <li>Repairs and small works</li>
-        </ul>
-      </div>
-      <div>
-        <h2>How it works.</h2>
-        <ul class="simple">
-          <li>A monthly retainer</li>
-          <li>Each task agreed with you first</li>
-          <li>One named contact</li>
-          <li>One statement, every cost at cost</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section examples">
     <div class="wrap">
-      <div class="lead-in">
-        <h2>Every cost, on one page.</h2>
-        <p>An example of your monthly statement.</p>
+      <h1>Your home.<br><em>Our responsibility.</em></h1>
+      <div class="under">
+        <p>One trusted office for the care, advice and running of significant private residences within an hour of Bath.</p>
+        <a class="cta" href="#enquire">Arrange a private consultation</a>
       </div>
-      <div class="docs single">
-        <figure class="doc" aria-label="Example statement">
-          <div class="top"><span class="title">Statement, March</span><span class="tag">Example</span></div>
-          <div class="row"><span><span class="date">6 Mar</span>Gate motor repaired</span><span>£340.00</span></div>
-          <div class="row"><span><span class="date">14 Mar</span>Pool serviced before arrival</span><span>£185.00</span></div>
-          <div class="row"><span><span class="date">18 Mar</span>Terrace tap repaired</span><span>£120.00</span></div>
-          <div class="total"><span class="muted">Supplier costs at cost, with receipts</span><strong>£645.00</strong></div>
-        </figure>
+    </div>
+    <div class="wrap">
+      <div class="img hero-img" role="img" aria-label="Architectural photograph" style="background-image:url(assets/hero.jpg)"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap intro-grid">
+      <p class="label">The Office</p>
+      <div>
+        <p class="statement">A home of this kind needs someone who understands it, watches over it and acts before it has to ask.</p>
+        <p class="statement-sub">We become the single point of responsibility for your residence: its care, its people, its projects and its records. You are kept informed, never burdened.</p>
       </div>
     </div>
   </section>
 
-  <section class="section paper" id="office">
-    <div class="wrap twin">
+  <section class="band stone" id="service">
+    <div class="wrap">
+      <div class="service-head">
+        <p class="label">Private Residence Management</p>
+        <h2>Continual care, considered advice and quiet delivery.</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="num">i.</span>
+          <h3>Continual care</h3>
+          <p>Regular visits shaped by what the house needs. Its systems, fabric and grounds kept in order, whether you are home or away.</p>
+        </div>
+        <div class="pillar">
+          <span class="num">ii.</span>
+          <h3>Considered advice</h3>
+          <p>Honest counsel before you spend. What the house needs now, what can wait, and what will protect it for the long term.</p>
+        </div>
+        <div class="pillar">
+          <span class="num">iii.</span>
+          <h3>Delivery and oversight</h3>
+          <p>Works arranged, supervised and settled on your behalf. Every supplier, invoice and decision brought together in one statement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap pair">
+      <div class="img" role="img" aria-label="Architectural photograph" style="background-image:url(assets/staircase.jpg)"></div>
+      <div class="img" role="img" aria-label="Architectural photograph" style="background-image:url(assets/garden.jpg)"></div>
+    </div>
+  </section>
+
+  <section class="band rule">
+    <div class="wrap whom">
       <div>
-        <h2>The Private Property Office.</h2>
-        <p class="muted" style="max-width:24em">For when you would like the house run and advised on as a whole.</p>
+        <p class="label" style="margin-bottom:24px">Whom we serve</p>
+        <h2>For owners who expect the house to simply be right.</h2>
       </div>
       <div>
-        <ul class="simple">
-          <li>Honest advice before you spend</li>
-          <li>Projects overseen on your side</li>
-          <li>Handover of a new home, every defect followed up</li>
-          <li>A full record of the house, which belongs to you</li>
+        <ul class="list">
+          <li><span class="t">The second home</span><span class="d">Watched over in your absence and prepared, quietly, for your return.</span></li>
+          <li><span class="t">The family residence</span><span class="d">For busy households who want one trusted office, not a list of contractors.</span></li>
+          <li><span class="t">The new acquisition</span><span class="d">A thorough understanding of the house from the first day, and every defect seen through.</span></li>
         </ul>
+        <p class="aside">We also act for personal assistants, buying agents and family representatives on behalf of their principals.</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap twin">
-      <div>
-        <h2>The terms we keep.</h2>
-      </div>
-      <div>
-        <ul class="simple">
-          <li>Discretion, agreed as standard</li>
-          <li>Trusted, vetted people only</li>
-          <li>No margin on the work we arrange</li>
-          <li>Everything agreed in writing</li>
-        </ul>
+  <section class="band stone">
+    <div class="wrap">
+      <p class="label" style="margin-bottom:40px">Our undertakings</p>
+      <div class="principles">
+        <div><h3>Discretion</h3><p>Agreed in writing as standard. Your name and home never appear in our marketing.</p></div>
+        <div><h3>A named lead</h3><p>One person who knows your house, answerable to you alone.</p></div>
+        <div><h3>Trusted people</h3><p>Only vetted specialists enter your home, and you always know who and when.</p></div>
+        <div><h3>One statement</h3><p>Every cost itemised, with receipts. Supplier costs passed on at cost.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section paper">
+  <section class="band">
     <div class="wrap founder">
       <blockquote>“A fine home deserves someone who understands it, and who will say plainly what it needs.”</blockquote>
-      <div class="who"><p class="bio">Nearly two decades in and around prestige homes. I understand a house from the inside out: how it is built, how it runs, and what it needs before it asks.</p><p><strong>Alex Green</strong>Founder</p></div>
-    </div>
-  </section>
-
-  <section class="section" id="questions">
-    <div class="wrap twin">
-      <div>
-        <h2>Questions.</h2>
-      </div>
-      <div>
-        <dl class="faq">
-          <dt>How is the retainer set?</dt>
-          <dd>By the size and complexity of the home and how much attention it needs. We agree it with you after a private walk-through, in writing, before anything begins.</dd>
-          <dt>Do you add a margin to the work you arrange?</dt>
-          <dd>No. Suppliers are paid at cost and every receipt appears on your monthly statement. Larger projects are quoted separately and agreed with you first.</dd>
-          <dt>Who holds the keys?</dt>
-          <dd>Keys and codes are held securely and released only to people we have vetted. You will always know who has been in the house, when and why.</dd>
-          <dt>What happens if something goes wrong while I'm away?</dt>
-          <dd>Message or call us. We make the house safe, bring in the right people and keep you updated with photographs until it is resolved.</dd>
-          <dt>I already have a property manager or agent.</dt>
-          <dd>We work alongside them, on your side. Many owners keep their agent for lettings or building matters and leave the house itself to us.</dd>
-          <dt>Is this confidential?</dt>
-          <dd>Completely. Discretion is agreed in writing as standard. Your name, address and home never appear in our marketing.</dd>
-        </dl>
+      <div class="who">
+        <p>Nearly two decades in and around prestige homes. An understanding of property from the inside out: how it is built, how it runs and what it needs before it asks.</p>
+        <p class="name">Alex Green</p>
       </div>
     </div>
   </section>
@@ -327,21 +240,24 @@ h2{font-size:clamp(24px,2.4vw,28px);line-height:1.2}
   <section class="enquire" id="enquire">
     <div class="wrap">
       <div>
-        <h2>A conversation about your home, in confidence.</h2>
+        <img class="emblem" src="assets/mark-light.png" alt="" width="789" height="298">
+        <p class="label" style="margin-bottom:28px">In confidence</p>
+        <h2>A private conversation about your home.</h2>
       </div>
       <div class="contact">
-        <a class="btn btn-light" href="mailto:enquiries@theprivatepropertyconcierge.com?subject=Private%20introduction">Arrange a private introduction</a>
-        <p class="note">In confidence, without obligation. Every introduction is answered personally, usually the same day.</p>
-        <p class="note">Or write to <a href="mailto:enquiries@theprivatepropertyconcierge.com?subject=Private%20introduction">enquiries@theprivatepropertyconcierge.com</a></p>
+        <p>Without obligation. Every enquiry is answered personally.</p>
+        <a class="cta light" href="mailto:enquiries@theprivatepropertyconcierge.com?subject=Private%20consultation">Arrange a private consultation</a>
+        <span class="addr">enquiries@theprivatepropertyconcierge.com</span>
       </div>
     </div>
   </section>
+
 </main>
 
-<footer class="site-footer">
+<footer>
   <div class="wrap">
-    <span>The Private Property Concierge</span>
-    <span>In confidence</span>
+    <span>The Private Property Office</span>
+    <span>Bath &amp; the Cotswolds</span>
   </div>
 </footer>
 
